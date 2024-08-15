@@ -1,0 +1,11 @@
+.logo{
+    width: 120px;
+    border-radius: 30px;
+}
+
+.cancel-btn{
+    background-color: #ededed;
+    border: none;
+    color: black;
+    margin-left: 15px;
+}
