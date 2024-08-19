@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0px;
+  padding: 10px 30px;
+  background-color: #e6f0fce0;
 }
 
 .navbar-logo img {
@@ -35,13 +36,6 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-}
-
-.user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 12px;
 }
 
 .profile-details a:hover {
@@ -116,7 +110,7 @@
   background-color: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 100;
   border-radius: 4px;
   opacity: 0;
   transform: translateY(-10px);

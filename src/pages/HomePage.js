@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/NavBar';
+import HeroSection from '../components/HeroSection';
 import { isLoggedIn, getUser } from '../utils/auth';
+import AboutUs from '../components/AboutUs';
 
 function HomePage() {
   const [user, setUser] = useState(null);
@@ -21,13 +23,14 @@ function HomePage() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // or a spinner/loading component
+    return <div>Loading...</div>;
   }
 
   return (
     <div>
       <Navbar user={user} />
-      {/* Your homepage content here */}
+      <HeroSection />
+      <AboutUs />
     </div>
   );
 }

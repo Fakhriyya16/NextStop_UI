@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../assets/styles/Login.css"; 
+import "../assets/styles/Login.css";
 import Image from "../assets/img/empty-frame-with-plane-globe.jpg";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -12,28 +13,30 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); 
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // Separate state for confirm password visibility
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setLoading(true);
-  
+
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       setLoading(false);
       return;
     }
-  
+
     try {
       const response = await axios.post("https://localhost:7264/api/Account/Register", {
         name,
         surname,
         email,
         password,
-        confirmPassword,  // Include confirmPassword in the request payload
+        confirmPassword, // Include confirmPassword in the request payload
       });
-  
+
       if (response.status === 200) {
         navigate("/login");
       } else {
@@ -49,6 +52,7 @@ const Register = () => {
       setLoading(false);
     }
   };
+
   return (
     <section className="vh-100" style={{ backgroundColor: "#fff" }}>
       <div className="container py-4 h-100">
@@ -67,8 +71,6 @@ const Register = () => {
                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
                   <div className="card-body p-4 p-lg-5 text-black">
                     <form onSubmit={handleSubmit}>
-                      <div className="d-flex align-items-center">
-                      </div>
                       <h5 className="fw-normal pb-3 text" style={{ letterSpacing: "1px" }}>
                         Create a new account
                       </h5>
@@ -112,27 +114,45 @@ const Register = () => {
                         </label>
                       </div>
                       <div className="form-outline mb-4">
-                        <input
-                          type="password"
-                          id="formPassword"
-                          className="form-control form-control-lg"
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
-                          required
-                        />
+                        <div className="input-group">
+                          <input
+                            type={showPassword ? "text" : "password"} // Toggle between text and password
+                            id="formPassword"
+                            className="form-control form-control-lg"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                          />
+                          <span 
+                            className="input-group-text" 
+                            onClick={() => setShowPassword(!showPassword)} // Toggle showPassword state
+                            style={{ cursor: "pointer" }}
+                          >
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                          </span>
+                        </div>
                         <label className="form-label" htmlFor="formPassword">
                           Password
                         </label>
                       </div>
                       <div className="form-outline mb-2">
-                        <input
-                          type="password"
-                          id="formConfirmPassword"
-                          className="form-control form-control-lg"
-                          value={confirmPassword}
-                          onChange={(e) => setConfirmPassword(e.target.value)}
-                          required
-                        />
+                        <div className="input-group">
+                          <input
+                            type={showConfirmPassword ? "text" : "password"} // Toggle between text and password
+                            id="formConfirmPassword"
+                            className="form-control form-control-lg"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
+                          />
+                          <span 
+                            className="input-group-text" 
+                            onClick={() => setShowConfirmPassword(!showConfirmPassword)} // Toggle showConfirmPassword state
+                            style={{ cursor: "pointer" }}
+                          >
+                            {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                          </span>
+                        </div>
                         <label className="form-label" htmlFor="formConfirmPassword">
                           Confirm Password
                         </label>
