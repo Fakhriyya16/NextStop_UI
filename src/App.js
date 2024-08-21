@@ -8,8 +8,10 @@ import HomePage from './pages/HomePage';
 import ResetPassword from './pages/ResetPassword';
 import { isLoggedIn, getUser } from './utils/auth';
 import Modal from 'react-modal';
+import ConfirmEmail from './pages/ConfirmEmail';
+import BlogsPage from './pages/BlogsPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 
-// Set the app element for react-modal
 Modal.setAppElement('#root');
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
 
   const fetchUser = async () => {
     if (isLoggedIn()) {
-      await getUser(); // Fetch user data if needed here or in HomePage
+      await getUser();
     }
     setLoading(false);
   };
@@ -26,7 +28,6 @@ function App() {
     fetchUser();
   }, []);
 
-  // Handle token-based refresh after login
   useEffect(() => {
     const handleStorageChange = () => {
       fetchUser();
@@ -39,7 +40,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // or a spinner/loading component
+    return <div>Loading...</div>; 
   }
 
   return (
@@ -49,6 +50,9 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/resetpassword" element={<ResetPassword/>} />
+          <Route path="/confirmemail" element={<ConfirmEmail/>} />
+          <Route path ="/blogs" element={<BlogsPage/>} />
+          <Route path="/blog/:id" element={<BlogDetailPage/>} />
         </Routes>
     </div>
   );

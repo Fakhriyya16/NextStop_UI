@@ -21,7 +21,9 @@ function Navbar({ user }) {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={Logo} alt="Logo" className="logo" />
+        <Link to="/" >
+          <img src={Logo} alt="Logo" className="logo" />
+        </Link>
       </div>
 
       <div className="navbar-right">
@@ -56,6 +58,7 @@ function Navbar({ user }) {
         <div className="navbar-links">
           {user ? (
             <div className="account-menu">
+              <Link to="/blogs">Blogs</Link>
               <Link to="/profile">Profile</Link>
               <Link to="/itineraries">Saved Itineraries</Link>
               <Link to="/favorites">Favorites</Link>
@@ -69,6 +72,7 @@ function Navbar({ user }) {
             </div>
           ) : (
             <>
+              <Link to="/blogs">Blogs</Link>
               <Link to="/login">Login</Link>
               <Link to="/register">Register</Link>
             </>

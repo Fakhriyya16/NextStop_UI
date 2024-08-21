@@ -3,6 +3,10 @@ import Navbar from '../components/NavBar';
 import HeroSection from '../components/HeroSection';
 import { isLoggedIn, getUser } from '../utils/auth';
 import AboutUs from '../components/AboutUs';
+import Explore from '../components/Explore';
+import Promotion from '../components/Promotion';
+import BlogCarousel from '../components/BlogCarousel';
+import Footer from '../components/Footer'
 
 function HomePage() {
   const [user, setUser] = useState(null);
@@ -31,6 +35,10 @@ function HomePage() {
       <Navbar user={user} />
       <HeroSection />
       <AboutUs />
+      <Explore/>
+      <Promotion />
+      <BlogCarousel />
+      <Footer/>
     </div>
   );
 }

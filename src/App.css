@@ -1,10 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap");
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 .container{
   max-width: 1340px !important;
 }
 
 .App{
-  background-image: url();
-  height: 100vh;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../assets/styles/Login.css";
-import Logo from "../assets/img/nextstop-high-resolution-logo.png";
 import Image from "../assets/img/empty-frame-with-plane-globe.jpg";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Modal from 'react-modal';
@@ -85,9 +84,9 @@ const Login = () => {
   return (
     <section className="vh-100" style={{ backgroundColor: "#fff" }}>
       <div className="container py-5 h-100">
-        <div className="row d-flex justify-content-center align-items-center h-100">
+        <div className="row d-flex justify-content-center align-items-center">
           <div className="col col-xl-10">
-            <div className="card" style={{ borderRadius: "1rem" }}>
+            <div className="login-card" style={{ borderRadius: "1rem" }}>
               <div className="row g-0">
                 <div className="col-md-6 col-lg-5 d-none d-md-block">
                   <img
@@ -101,7 +100,6 @@ const Login = () => {
                   <div className="card-body p-4 p-lg-5 text-black">
                     <form onSubmit={handleSubmit}>
                       <div className="d-flex align-items-center mb-3 pb-1">
-                        <img src={Logo} className="logo" />
                       </div>
                       <h5 className="fw-normal mb-3 pb-3" style={{ letterSpacing: "1px" }}>
                         Sign into your account

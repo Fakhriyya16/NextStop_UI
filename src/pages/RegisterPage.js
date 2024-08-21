@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../assets/styles/Login.css";
+import "../assets/styles/Register.css";
 import Image from "../assets/img/empty-frame-with-plane-globe.jpg";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -58,7 +58,7 @@ const Register = () => {
       <div className="container py-4 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col col-xl-10">
-            <div className="card" style={{ borderRadius: "1rem" }}>
+            <div className="register-card" style={{ borderRadius: "1rem" }}>
               <div className="row g-0">
                 <div className="col-md-6 col-lg-5 d-none d-md-block">
                   <img
@@ -71,10 +71,10 @@ const Register = () => {
                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
                   <div className="card-body p-4 p-lg-5 text-black">
                     <form onSubmit={handleSubmit}>
-                      <h5 className="fw-normal pb-3 text" style={{ letterSpacing: "1px" }}>
+                      <h5 className="fw-normal pb-3 text register-hdn" style={{ letterSpacing: "1px" }}>
                         Create a new account
                       </h5>
-                      <div className="form-outline mb-4">
+                      <div className="form-outline mb-3">
                         <input
                           type="text"
                           id="formName"
@@ -87,7 +87,7 @@ const Register = () => {
                           Name
                         </label>
                       </div>
-                      <div className="form-outline mb-4">
+                      <div className="form-outline mb-3">
                         <input
                           type="text"
                           id="formSurname"
@@ -100,7 +100,7 @@ const Register = () => {
                           Surname
                         </label>
                       </div>
-                      <div className="form-outline mb-4">
+                      <div className="form-outline mb-2">
                         <input
                           type="email"
                           id="formEmail"
@@ -113,7 +113,7 @@ const Register = () => {
                           Email address
                         </label>
                       </div>
-                      <div className="form-outline mb-4">
+                      <div className="form-outline mb-2">
                         <div className="input-group">
                           <input
                             type={showPassword ? "text" : "password"} // Toggle between text and password

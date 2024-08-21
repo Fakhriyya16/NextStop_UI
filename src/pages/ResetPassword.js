@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";  // Import useNavigate from react-router-dom
+import { useNavigate } from "react-router-dom";  
 import "../assets/styles/ResetPassword.css"; 
 import Logo from "../assets/img/nextstop-high-resolution-logo-black-transparent.png"
 
@@ -9,10 +9,10 @@ const ResetPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState(""); 
   const [token, setToken] = useState(""); 
-  const [error, setError] = useState("");  // Single error state
+  const [error, setError] = useState("");  
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();  // Initialize useNavigate
+  const navigate = useNavigate();  
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -25,7 +25,7 @@ const ResetPassword = () => {
       setError("Passwords don't match");
       return false;
     }
-    setError("");  // Clear the error if passwords match
+    setError("");
     return true;
   };
 
@@ -54,7 +54,7 @@ const ResetPassword = () => {
       if (response.status === 200) {
         setSuccess("Password reset successfully!");
         setTimeout(() => {
-          navigate("/login");  // Redirect to login page after 2 seconds
+          navigate("/login"); 
         }, 2000);
       } else {
         setError(response.data.message || "An unexpected error occurred.");

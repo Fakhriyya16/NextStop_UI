@@ -1,0 +1,128 @@
+.blog-container {
+    width: 100%;
+    padding: 20px 0px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.blogs-heading{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.post {
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor:    pointer  ;
+}
+
+.post_content h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: -60px;
+}
+
+.post_content p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.header_post {
+    width: 100%;
+    height: 60%;
+    background: #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.header_post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in-out;
+}
+
+.post:hover .header_post img {
+    transform: scale(1.05);
+}
+
+.body_post {
+    width: 100%;
+    height: 60%;
+    background: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.post_content {
+    width: 100%;
+    text-align: left;
+    margin-top: -10px;
+}
+
+.container_infos {
+    display: flex;
+    gap: 130px;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.postedBy,
+.container_date {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #999;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_date .date {
+    color: #999;
+}
+
+.b-pagination {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.b-pagination button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #1e96fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.b-pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.b-pagination button:hover:not(:disabled) {
+    color: white;
+}
