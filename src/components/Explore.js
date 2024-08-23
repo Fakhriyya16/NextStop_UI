@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../assets/styles/Explore.css'; 
+import '../assets/styles/Explore.css';
+import { Link } from 'react-router-dom';
 
 const Explore = () => {
   const [places, setPlaces] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(4); 
+  const [pageSize, setPageSize] = useState(4);
   const [hasNext, setHasNext] = useState(false);
   const [hasPrevious, setHasPrevious] = useState(false);
   const [totalPages, setTotalPages] = useState(0);
@@ -38,7 +39,7 @@ const Explore = () => {
 
   const handlePageSizeChange = (event) => {
     setPageSize(Number(event.target.value));
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   const shortenDescription = (description, wordLimit) => {
@@ -47,6 +48,29 @@ const Explore = () => {
       return words.slice(0, wordLimit).join(' ') + '...';
     }
     return description;
+  };
+
+  const getPaginationButtons = () => {
+    const buttons = [];
+    const pageRange = 3;
+    const startPage = Math.max(1, currentPage - pageRange);
+    const endPage = Math.min(totalPages, currentPage + pageRange);
+
+    if (totalPages > 5 && startPage > 1) {
+      buttons.push(1);
+      if (startPage > 2) buttons.push('...');
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      buttons.push(i);
+    }
+
+    if (totalPages > 5 && endPage < totalPages) {
+      if (endPage < totalPages - 1) buttons.push('...');
+      buttons.push(totalPages);
+    }
+
+    return buttons;
   };
 
   return (
@@ -82,7 +106,9 @@ const Explore = () => {
                     {shortenDescription(place.description, 7)}
                   </p>
                 </div>
-                <button className="button-81">Read more</button>
+                <Link to={`/place/${place.id}`}>
+                  <button className="button-81">Read more</button>
+                </Link>
               </div>
             </div>
           ))
@@ -99,14 +125,18 @@ const Explore = () => {
           Previous
         </button>
 
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index}
-            onClick={() => handlePageChange(index + 1)}
-            className={index + 1 === currentPage ? 'active' : ''}
-          >
-            {index + 1}
-          </button>
+        {getPaginationButtons().map((page, index) => (
+          page === '...' ? (
+            <span key={index}>...</span>
+          ) : (
+            <button
+              key={index}
+              onClick={() => handlePageChange(page)}
+              className={page === currentPage ? 'active' : ''}
+            >
+              {page}
+            </button>
+          )
         ))}
 
         <button

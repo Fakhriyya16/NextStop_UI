@@ -63,7 +63,7 @@ function Navbar({ user }) {
               <Link to="/itineraries">Saved Itineraries</Link>
               <Link to="/favorites">Favorites</Link>
               {user?.subscriptionType === 'Free' && (
-                <Link to="/premium" className="premium-link">Buy Premium</Link>
+                <Link to="/buypremium" className="premium-link">Buy Premium</Link>
               )}
               {user?.subscriptionType === 'Premium' && (
                 <span className="premium-plan">Premium Plan</span>

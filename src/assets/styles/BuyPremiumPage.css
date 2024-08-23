@@ -1,0 +1,60 @@
+/* BuyPremiumPage.css */
+
+.buy-premium-page {
+    background-color: #f8f9fa; /* Light grey background for the page */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.buy-premium-page h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333; /* Dark grey for the heading */
+}
+
+.buy-premium-page .container {
+    max-width: 600px; /* Centered container */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.payment-form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for elevation */
+}
+
+.card-element {
+    margin-bottom: 20px; /* Space below the card input */
+}
+
+.pay-button {
+    background-color: #28a745; /* Green button color */
+    color: #ffffff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.125rem; /* Slightly larger text */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.pay-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.pay-button:disabled {
+    background-color: #d6d6d6; /* Grey button when disabled */
+    cursor: not-allowed;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+    .buy-premium-page h2 {
+        font-size: 1.5rem; /* Smaller font size on smaller screens */
+    }
+
+    .payment-form {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+}

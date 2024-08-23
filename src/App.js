@@ -11,6 +11,9 @@ import Modal from 'react-modal';
 import ConfirmEmail from './pages/ConfirmEmail';
 import BlogsPage from './pages/BlogsPage';
 import BlogDetailPage from './pages/BlogDetailPage';
+import PlaceDetailPage from './pages/PlaceDetailPage';
+import FavoritesPage from './pages/FavoritesPage';
+import BuyPremium from './pages/BuyPremiumPage';
 
 Modal.setAppElement('#root');
 
@@ -53,6 +56,9 @@ function App() {
           <Route path="/confirmemail" element={<ConfirmEmail/>} />
           <Route path ="/blogs" element={<BlogsPage/>} />
           <Route path="/blog/:id" element={<BlogDetailPage/>} />
+          <Route path="/place/:id" element={<PlaceDetailPage/>} />
+          <Route path='/favorites' element={<FavoritesPage/>} />
+          <Route path='/buypremium' element={<BuyPremium/>} />
         </Routes>
     </div>
   );

@@ -40,8 +40,7 @@ const BlogDetail = () => {
             <div className="detail-blog-main">
                 <Link to="/blogs" className="back-btn">
                     &larr; Back to Blogs
-                </Link>
-                
+                </Link>                
                 <article className="blog-card-detail">
                     <div className="card__background--wrapper">
                         <img src={blog.images[0]} className='blog-detail-image' alt="Blog Detail" />

@@ -60,6 +60,14 @@ const BlogPage = () => {
         <section id='blogs'>
             <Navbar />
             <h1 className='blogs-heading'>Explore Travel Blogs</h1>
+            <div className="go-back-b">
+                <a className="go-back-b-a" href="/">
+                    <i className="fas fa-chevron-left"></i>
+                </a>
+                <a className="go-back-b-a" href="/">
+                    Go Back
+                </a>
+            </div>
             <div className="blog-container">
                 {loading ? (
                     <p>Loading blogs...</p>

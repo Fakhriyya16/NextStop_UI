@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-.blogs-heading{
+.blogs-heading {
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -25,7 +25,21 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor:    pointer  ;
+    cursor: pointer;
+}
+
+.go-back-b {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #0d1f4e;
+    cursor: pointer;
+    padding-left: 80px;
+}
+
+.go-back-b-a {
+    text-decoration: none;
+    color: #0d1f4e;
 }
 
 .post_content h1 {
