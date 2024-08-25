@@ -32,6 +32,8 @@ const GenerateItineraryPage = () => {
                     }).then((result) => {
                         if (result.isConfirmed) {
                             window.location.href = '/buypremium'; 
+                        } else {
+                            window.location.href = '/';
                         }
                     });
                 }
@@ -46,11 +48,13 @@ const GenerateItineraryPage = () => {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = '/login'; 
+                    } else {
+                        window.location.href = '/';
                     }
                 });
             }
         };
-
+    
         const fetchCategoriesAndCities = async () => {
             try {
                 const [categoriesResponse, citiesResponse] = await Promise.all([
@@ -63,7 +67,7 @@ const GenerateItineraryPage = () => {
                 console.error('Error fetching categories or cities:', error);
             }
         };
-
+    
         fetchUser();
         fetchCategoriesAndCities();
     }, []);
@@ -88,7 +92,7 @@ const GenerateItineraryPage = () => {
                 numberOfDays: numberOfDays,
                 categories: selectedCategories,
             }, {
-                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+                headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
             });
 
             setTimeout(() => {

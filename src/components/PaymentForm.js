@@ -50,7 +50,7 @@ const PaymentForm = () => {
         currency: 'usd',
         description: 'Premium Subscription',
       }, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
       });
       const { clientSecret } = response.data;
 

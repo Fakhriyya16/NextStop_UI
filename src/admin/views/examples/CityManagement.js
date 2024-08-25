@@ -26,7 +26,7 @@ const CityManagement = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (!token) {
       navigate('/notauthorized');
       return;
@@ -39,7 +39,7 @@ const CityManagement = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(`${API_URL}/GetAll`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       setCities(data);
     } catch (err) {
@@ -74,7 +74,7 @@ const CityManagement = () => {
     try {
       await axios.post(`${API_URL}/Create`, formData, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           'Content-Type': 'multipart/form-data'
         }
       });
@@ -120,7 +120,7 @@ const CityManagement = () => {
     try {
       await axios.put(`${API_URL}/Edit`, formData, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           'Content-Type': 'multipart/form-data'
         },
         params: { id: editingCity.id } 
@@ -149,7 +149,7 @@ const CityManagement = () => {
     try {
       await axios.delete(`${API_URL}/Delete`, {
         params: { id: cityId },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       Swal.fire({
         title: 'Deleted!',

@@ -211,7 +211,7 @@ const SearchPlaces = () => {
                     </div>
                     <div className="place-hover-overlay">
                       <Link
-                        to={`/placedetail/${place.id}`}
+                        to={`/place/${place.id}`}
                         className="read-more-button"
                       >
                         Read More

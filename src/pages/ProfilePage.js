@@ -26,7 +26,7 @@ const ProfilePage = () => {
             if (isLoggedIn()) {
                 try {
                     setLoading(true); 
-                    const token = localStorage.getItem("token");
+                    const token = sessionStorage.getItem("token");
                     const response = await axios.get(`https://localhost:7264/api/Account/GetUsersDetails?id=${id}`, {
                         headers: { Authorization: `Bearer ${token}` }
                     });
@@ -63,7 +63,7 @@ const ProfilePage = () => {
         e.preventDefault();
         try {
             setLoading(true); 
-            const token = localStorage.getItem("token");
+            const token = sessionStorage.getItem("token");
             await axios.put(`https://localhost:7264/api/Account/UpdateProfile?id=${id}`, formData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
@@ -86,7 +86,7 @@ const ProfilePage = () => {
         if (window.confirm('Are you sure you want to delete your account?')) {
             try {
                 setLoading(true); 
-                const token = localStorage.getItem("token");
+                const token = sessionStorage.getItem("token");
                 await axios.delete(`https://localhost:7264/api/Account/DeleteAccount?userId=${id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });

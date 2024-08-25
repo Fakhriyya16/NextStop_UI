@@ -26,7 +26,7 @@ const Account = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (!token) {
       navigate('/notauthorized'); 
       return;
@@ -50,7 +50,7 @@ const Account = () => {
           currentPage,
           pageSize
         },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       setUsers(data.data);
       setTotalCount(data.totalCount);
@@ -68,7 +68,7 @@ const Account = () => {
 
   const handleDelete = async (userId) => {
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       if (!token) {
         throw new Error('No token found');
       }
@@ -102,7 +102,7 @@ const Account = () => {
 
   const handleRoleChange = async (userId, role, action) => {
     try {
-      const token = localStorage.getItem('token'); 
+      const token = sessionStorage.getItem('token'); 
       if (!token) {
         throw new Error('No token found');
       }

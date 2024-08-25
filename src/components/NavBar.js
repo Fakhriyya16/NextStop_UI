@@ -18,7 +18,7 @@ function Navbar() {
         const userData = await getUser();
         if (userData) {
           setUser(userData);
-          const token = localStorage.getItem("token");
+          const token = sessionStorage.getItem("token");
           try {
             const decodedToken = jwtDecode(token);
             setIsAdmin(decodedToken.role.includes('Admin'));

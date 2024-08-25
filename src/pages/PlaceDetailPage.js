@@ -46,7 +46,7 @@ const PlaceDetailPage = () => {
         setUser(userDetails);
         checkFavoriteStatus(userDetails.appUserId, id);
 
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
         if (token) {
           try {
             const decodedToken = jwtDecode(token);
@@ -89,7 +89,7 @@ const PlaceDetailPage = () => {
         params: {
           placeId,
         },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
       });
       setIsFavorite(response.data);
     } catch (error) {
@@ -137,7 +137,7 @@ const PlaceDetailPage = () => {
     }
 
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       await axios.post(
         `https://localhost:7264/api/Review/Create?placeId=${id}`,
         {
@@ -171,7 +171,7 @@ const PlaceDetailPage = () => {
 
   const handleReviewDelete = async (reviewId) => {
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       await axios.delete(
         `https://localhost:7264/api/Review/Delete?id=${reviewId}`,
         {
@@ -237,7 +237,7 @@ const PlaceDetailPage = () => {
     setIsAddingFavorite(true);
 
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       
       if (isFavorite) {
         await axios.delete('https://localhost:7264/api/Favorite/Delete', {

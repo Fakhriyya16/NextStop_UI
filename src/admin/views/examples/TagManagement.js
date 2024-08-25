@@ -18,7 +18,7 @@ const TagManagement = () => {
   const fetchTags = async () => {
     try {
       const { data } = await axios.get('https://localhost:7264/api/admin/Tag/GetAll', {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       setTags(data);
     } catch (err) {
@@ -44,7 +44,7 @@ const TagManagement = () => {
 
     try {
       await axios.post('https://localhost:7264/api/admin/Tag/Create', newTag, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       Swal.fire({
         title: 'Success!',
@@ -79,7 +79,7 @@ const TagManagement = () => {
 
     try {
       await axios.put(`https://localhost:7264/api/admin/Tag/Edit?id=${editingTag.id}`, { name: editingTag.name }, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       Swal.fire({
         title: 'Success!',
@@ -104,7 +104,7 @@ const TagManagement = () => {
   const handleDelete = async (tagId) => {
     try {
       await axios.delete(`https://localhost:7264/api/admin/Tag/Delete?id=${tagId}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       Swal.fire({
         title: 'Deleted!',

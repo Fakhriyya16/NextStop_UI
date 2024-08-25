@@ -14,7 +14,7 @@ const ItineraryPage = () => {
         const fetchItinerary = async () => {
             try {
                 const response = await axios.get(`https://localhost:7264/api/Itinerary/GetById/${id}`, {
-                    headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+                    headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
                 });
                 setItinerary(response.data);
             } catch (error) {

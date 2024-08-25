@@ -25,7 +25,7 @@ const BlogManagement = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (!token) {
       navigate('/notauthorized');
       return;
@@ -42,7 +42,7 @@ const BlogManagement = () => {
           currentPage,
           pageSize
         },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       setBlogs(data.data);
       setTotalCount(data.totalCount);
@@ -64,7 +64,7 @@ const BlogManagement = () => {
         params: {
           id: blogId
         },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       Swal.fire({
         title: 'Deleted!',

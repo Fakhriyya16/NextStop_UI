@@ -28,7 +28,7 @@ const Login = () => {
       });
 
       if (response.status === 200) {
-        localStorage.setItem("token", response.data.message);
+        sessionStorage.setItem("token", response.data.message);
         window.location.href = "/";
       } else {
         setError(response.data.errors[0] || "An unexpected error occurred.");

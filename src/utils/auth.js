@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 export const isLoggedIn = () => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   return !!token; 
 };
 
 export const getUser = async () => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   if (token) {
     try {
       const response = await axios.get('https://localhost:7264/api/Account/GetCurrentUser', {
@@ -22,6 +22,6 @@ export const getUser = async () => {
 };
 
 export const logout = () => {
-  localStorage.removeItem("token"); 
+  sessionStorage.removeItem("token"); 
   window.location.href = "/login"; 
 };

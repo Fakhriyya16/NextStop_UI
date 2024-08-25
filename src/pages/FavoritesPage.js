@@ -31,7 +31,7 @@ const FavoritesPage = () => {
                 const response = await axios.get(
                     `https://localhost:7264/api/Favorite/GetAllPaginatedForUser?currentPage=${currentPage}&pageSize=${pageSize}`,
                     {
-                        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+                        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
                     }
                 );
 
@@ -64,7 +64,7 @@ const FavoritesPage = () => {
         try {
             await axios.delete('https://localhost:7264/api/Favorite/Delete', {
                 params: { placeId: placeId },
-                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+                headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
             });
             
             await Swal.fire({

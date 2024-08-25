@@ -45,7 +45,7 @@ const PlaceManagement = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (!token) {
       navigate('/notauthorized');
       return;
@@ -66,7 +66,7 @@ const PlaceManagement = () => {
     try {
       const { data } = await axios.get(`${API_URL}/GetAllPaginated`, {
         params: { currentPage: page, pageSize: pagination.pageSize },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
       });
       console.log(data.data);
       setPagination({
@@ -97,7 +97,7 @@ const PlaceManagement = () => {
   const fetchCities = async () => {
     try {
       const { data } = await axios.get('https://localhost:7264/api/City/GetAllNames', {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
       });
       setCities(data);
     } catch (err) {
@@ -113,7 +113,7 @@ const PlaceManagement = () => {
   const fetchCategories = async () => {
     try {
       const { data } = await axios.get('https://localhost:7264/api/Category/GetAllNames', {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
       });
       setCategories(data);
     } catch (err) {
@@ -129,7 +129,7 @@ const PlaceManagement = () => {
   const fetchTags = async () => {
     try {
       const { data } = await axios.get('https://localhost:7264/api/Tag/GetAllNames', {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
       });
       setTags(data);
     } catch (err) {
@@ -164,7 +164,7 @@ const PlaceManagement = () => {
     try {
       await axios.post(`${API_URL}/Create`, formData, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           'Content-Type': 'multipart/form-data',
         },
       });
@@ -217,7 +217,7 @@ const PlaceManagement = () => {
     try {
       await axios.put(`${API_URL}/Edit?id=${editingPlace.id}`, formData, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           'Content-Type': 'multipart/form-data',
         },
       });
@@ -245,7 +245,7 @@ const PlaceManagement = () => {
     try {
       await axios.delete(`${API_URL}/Delete`, {
         params: { id: placeId },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
       });
       Swal.fire({
         title: 'Deleted!',

@@ -25,7 +25,7 @@ const CategoryManagement = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (!token) {
       navigate('/notauthorized');
       return;
@@ -38,7 +38,7 @@ const CategoryManagement = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(`${API_URL}/GetAll`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       setCategories(data);
     } catch (err) {
@@ -56,7 +56,7 @@ const CategoryManagement = () => {
   const handleCreate = async () => {
     try {
       await axios.post(`${API_URL}/Create`, newCategory, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       Swal.fire({
         title: 'Success!',
@@ -82,7 +82,7 @@ const CategoryManagement = () => {
       await axios.put(`${API_URL}/Edit`, 
         { name: editingCategory.name },
         { 
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+          headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
           params: { id: editingCategory.id } 
         }
       );
@@ -112,7 +112,7 @@ const CategoryManagement = () => {
         params: {
           id: categoryId
         },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       Swal.fire({
         title: 'Deleted!',

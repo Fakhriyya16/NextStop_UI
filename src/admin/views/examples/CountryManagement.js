@@ -25,7 +25,7 @@ const CountryManagement = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (!token) {
       navigate('/notauthorized');
       return;
@@ -38,7 +38,7 @@ const CountryManagement = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(`${API_URL}/GetAll`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       setCountries(data);
     } catch (err) {
@@ -67,7 +67,7 @@ const CountryManagement = () => {
     try {
       await axios.post(`${API_URL}/Create`, { name: newCountry.name }, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`
         }
       });
       Swal.fire({
@@ -103,7 +103,7 @@ const CountryManagement = () => {
     try {
       await axios.put(`${API_URL}/Edit`, { name: editingCountry.name }, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`
         },
         params:{
             id: editingCountry.id
@@ -131,7 +131,7 @@ const CountryManagement = () => {
   const handleDelete = async (countryId) => {
     try {
       await axios.delete(`${API_URL}/Delete`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
         params : {id: countryId}
       });
       Swal.fire({

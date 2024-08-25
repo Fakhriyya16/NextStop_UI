@@ -17,7 +17,7 @@ const SubscriptionPrice = () => {
   const fetchCurrentPrice = async () => {
     try {
       const { data } = await axios.get(`${API_URL}/GetCurrentPrice`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
       });
       setCurrentPrice(data.monthlyPrice);
     } catch (err) {
@@ -47,7 +47,7 @@ const SubscriptionPrice = () => {
             {
               headers: {
                 'Content-Type': 'application/json', 
-                Authorization: `Bearer ${localStorage.getItem('token')}`
+                Authorization: `Bearer ${sessionStorage.getItem('token')}`
               }
             }
           );
