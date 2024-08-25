@@ -74,35 +74,35 @@ const Explore = () => {
   };
 
   return (
-    <div className="explore" id="explore">
-      <div className='explore-heading'>
+    <div className="mp-explore" id="explore">
+      <div className='mp-explore-heading'>
         <h1>Places To Visit</h1>
       </div>
 
-      <div className="ex-pagination-controls">
+      <div className="mp-ex-pagination-controls">
         <label htmlFor="pageSize">Items per page:</label>
-        <select id="pageSize" value={pageSize} onChange={handlePageSizeChange} className='form-select'>
+        <select id="pageSize" value={pageSize} onChange={handlePageSizeChange} className='mp-form-select'>
           <option value="4">4</option>
           <option value="8">8</option>
           <option value="12">12</option>
         </select>
       </div>
 
-      <div className="card-container">
+      <div className="mp-card-container">
         {places.length > 0 ? (
           places.map(place => (
-            <div className="card" key={place.id}>
+            <div className="mp-card" key={place.id}>
               <img
-                className="card__background"
+                className="mp-card__background"
                 src={place.images[0]}
                 alt={`Photo of ${place.name}`}
                 width="1920"
                 height="2193"
               />
-              <div className="card__content">
-                <div className="card__content--container">
-                  <h2 className="card__title">{place.name}</h2>
-                  <p className="card__description">
+              <div className="mp-card__content">
+                <div className="mp-card__content--container">
+                  <h2 className="mp-card__title">{place.name}</h2>
+                  <p className="mp-card__description">
                     {shortenDescription(place.description, 7)}
                   </p>
                 </div>
@@ -117,7 +117,7 @@ const Explore = () => {
         )}
       </div>
 
-      <div className="ex-pagination">
+      <div className="mp-ex-pagination">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={!hasPrevious}

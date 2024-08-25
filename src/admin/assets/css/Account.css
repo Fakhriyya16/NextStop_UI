@@ -1,0 +1,86 @@
+.a-a-container {
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.a-a-heading {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.a-a-table {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.a-a-table thead {
+    background-color: #f8f9fa;
+}
+
+.a-a-table th,
+.a-a-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.a-a-table th {
+    font-weight: bold;
+}
+
+.a-a-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.a-a-button {
+    font-size: 0.875rem;
+}
+
+.a-a-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.a-a-button.btn.btn-warning {
+    margin: 0;
+}
+
+.a-a-loading {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.a-a-pagination {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.a-a-pagination-item {
+    margin: 0 0.1rem;
+}
+
+.a-a-pagination .page-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.a-a-pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.a-a-pagination .page-item.disabled .page-link {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    color: #6c757d;
+}

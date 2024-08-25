@@ -14,6 +14,13 @@ import BlogDetailPage from './pages/BlogDetailPage';
 import PlaceDetailPage from './pages/PlaceDetailPage';
 import FavoritesPage from './pages/FavoritesPage';
 import BuyPremium from './pages/BuyPremiumPage';
+import GenerateItinerary from './pages/GenerateItineraryPage';
+import Itinerary from './pages/ItineraryPage';
+import AdminPanel from './admin';
+import NotAuthorized from './pages/NotAuthorized';
+import ProfilePage from './pages/ProfilePage';
+import SearchPlace from './pages/SearchPlaces';
+import CityDetail from './pages/CityDetailPage';
 
 Modal.setAppElement('#root');
 
@@ -59,6 +66,13 @@ function App() {
           <Route path="/place/:id" element={<PlaceDetailPage/>} />
           <Route path='/favorites' element={<FavoritesPage/>} />
           <Route path='/buypremium' element={<BuyPremium/>} />
+          <Route path='/generateitinerary' element={<GenerateItinerary/>} />
+          <Route path ='/itinerary/:id' element={<Itinerary />} />
+          <Route path ='/admin/*' element={<AdminPanel/>} />
+          <Route path ='/notauthorized' element={<NotAuthorized/>} />
+          <Route path ='/profile/:id' element={<ProfilePage/>} />
+          <Route path ='/searchplaces' element={<SearchPlace/>} />
+          <Route path ='/city/:name' element={<CityDetail/>} />
         </Routes>
     </div>
   );

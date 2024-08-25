@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Admin-specific ignores
+package-lock.json
+.eslintcache

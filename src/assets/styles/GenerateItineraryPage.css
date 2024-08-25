@@ -1,0 +1,93 @@
+.generate-itinerary-page {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gi-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #112f11;
+  }
+  
+  .gi-form-group {
+    margin-bottom: 15px;
+  }
+
+  .gi-box{
+    position: relative;
+  }
+
+  .gi-box select{
+    background-color: #0563af;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+
+  .gi-box::before {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  
+  .gi-box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .gi-box select option {
+    padding: 30px;
+  }
+  
+  .gi-form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .gi-form-group input[type="text"],
+  .gi-form-group input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .gi-categories label {
+    display: flex;
+    align-items: center;
+    gap:  10px;
+    margin-bottom: 10px;
+  }
+  
+  .gi-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .gi-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .itinerary-results {
+    margin-top: 20px;
+  }
+  

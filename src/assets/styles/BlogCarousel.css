@@ -4,38 +4,38 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-.center {
+.mp-blog-center {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-.carousel-heading{
+.mp-blog-carousel-heading{
     display: flex;
     justify-content: center;
     font-weight: 700;
 }
 
-.wrapper {
+.mp-blog-wrapper {
     width: 80%;
 }
 
-.card-crs {
+.mp-blog-card-crs {
     border-radius: 0.5em;
     overflow: hidden;
     cursor: pointer;
     border: 1px solid white;
 }
 
-.card-crs img {
+.mp-blog-card-crs img {
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
     width: 100%;
     height: 250px;
 }
 
-.card-crs .content-b {
+.mp-blog-card-crs .mp-blog-content-b {
     background: #0a2640;
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
@@ -46,7 +46,7 @@ body {
     padding: 0px 15px;
 }
 
-.card-crs h1 {
+.mp-blog-card-crs h1 {
     color: #fff;
     font-size: 1.25rem;
     margin: 0.35em 0;

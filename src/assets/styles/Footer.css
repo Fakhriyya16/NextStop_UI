@@ -1,4 +1,4 @@
-.footer {
+.mp-footer {
     margin-top: 60px;
     background-color: #001d38;
     color: #fff;
@@ -6,7 +6,7 @@
     font-family: 'Raleway', sans-serif;
   }
   
-  .footer-container {
+  .mp-footer-container {
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
@@ -14,65 +14,66 @@
     flex-wrap: wrap;
   }
   
-  .footer-section {
+  .mp-footer-section {
     flex: 1;
     margin: 0 20px;
   }
   
-  .footer-section h3 {
+  .mp-footer-section h3 {
     border-bottom: 2px solid #fff;
+    color: white;
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-size: 1.25rem;
   }
   
-  .footer-section p, .footer-section ul {
+  .mp-footer-section p, .mp-footer-section ul {
     margin: 0;
     padding: 0;
     list-style: none;
     font-size: 15px;
   }
   
-  .footer-section ul {
+  .mp-footer-section ul {
     padding-left: 0;
   }
   
-  .footer-section ul li {
+  .mp-footer-section ul li {
     margin-bottom: 10px;
   }
   
-  .footer-section ul li a {
+  .mp-footer-section ul li a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s;
   }
   
-  .footer-section ul li a:hover {
+  .mp-footer-section ul li a:hover {
     color: #f5a623;
   }
   
-  .social-icons {
+  .mp-social-icons {
     display: flex;
     gap: 10px;
   }
   
-  .social-icons a {
+  .mp-social-icons a {
     color: #fff;
     font-size: 1.5rem;
     transition: color 0.3s;
   }
   
-  .social-icons a:hover {
+  .mp-social-icons a:hover {
     color: #f5a623;
   }
   
-  .footer-bottom {
+  .mp-footer-bottom {
     text-align: center;
     padding: 20px 0px 0px;
     border-top: 1px solid #333;
   }
   
-  .footer-bottom p {
+  .mp-footer-bottom p {
     margin: 0;
   }
   

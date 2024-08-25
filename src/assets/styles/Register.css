@@ -1,9 +1,31 @@
-.register-hdn{
+.register-hdn {
     margin-top: -30px !important;
+    font-size: 24px;
+
 }
 
-.register-card{
-    height: 649px;
+.register-card {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.register-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.register-button{
+    margin: 0px 5px !important;
+}
+
+.register-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.register-image img{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}

@@ -1,8 +1,31 @@
-.cancel-btn {
-    background-color: #ededed;
-    border: none;
-    color: black;
-    margin-left: 15px;
+.login-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.login-button{
+    margin: 0px 5px !important;
+}
+
+.login-card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.login-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.login-image img{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+.login-hdn{
+    font-size: 24px;
 }
 
 .ReactModal__Overlay {

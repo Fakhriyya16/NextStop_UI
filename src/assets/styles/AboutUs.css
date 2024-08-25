@@ -5,10 +5,12 @@
   color: #3d405b;
 }
 
-h1{
+.about-heading{
   color: #11296b;
   margin-bottom: 25px;
   font-weight: 700;
+  font-size: 30px !important;
+  font-family: inherit;
 }
 
 .responsive-container-block {

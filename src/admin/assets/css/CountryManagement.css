@@ -1,0 +1,102 @@
+.c-o-container {
+    padding-top: 40px;
+    min-height: 100vh;
+  }
+  
+  .c-o-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .c-o-form {
+    margin-bottom: 20px;
+  }
+  
+  .c-o-form .form-group {
+    margin-right: 10px;
+  }
+  
+  .c-o-form .form-group label {
+    font-weight: bold;
+  }
+  
+  .c-o-form .form-group input {
+    margin-right: 10px;
+  }
+  
+  .c-o-table {
+    margin-top: 20px;
+  }
+  
+  .c-o-table th, .c-o-table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .c-o-table th {
+    background-color: #f8f9fa;
+  }
+  
+  .c-o-table td {
+    padding: 10px;
+  }
+  
+  .c-o-loading {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+  }
+  
+  .c-o-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .c-o-button {
+    font-size: 0.9rem;
+  }
+  
+  .c-o-button {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .c-o-button.btn-danger {
+    background-color: #dc3545;
+  }
+  
+  .c-o-button.btn-info {
+    background-color: #17a2b8;
+  }
+  
+  .c-o-button.btn-success {
+    background-color: #28a745;
+  }
+  
+  .c-o-button.btn-secondary {
+    background-color: #6c757d;
+  }
+  
+  .c-o-button:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 768px) {
+    .c-o-form .form-group {
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+  
+    .c-o-actions {
+      flex-direction: column;
+    }
+  
+    .c-o-actions .c-o-button {
+      margin-bottom: 10px;
+    }
+  }
+  

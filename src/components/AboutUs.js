@@ -10,7 +10,7 @@ const AboutUs = () => {
                     <img className="mainImg" src={MainImage} alt="Main Image" />
                 </div>
                 <div className="responsive-container-block textSide">
-                    <h1 className="heading">
+                    <h1 className="about-heading">
                         About Us
                     </h1>
                     <p className="text-blk subHeading">

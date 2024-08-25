@@ -4,11 +4,27 @@ import axios from 'axios';
 import '../assets/styles/BlogDetail.css';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
+import { isLoggedIn, getUser } from '../utils/auth';
 
 const BlogDetail = () => {
     const { id } = useParams();
     const [blog, setBlog] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(null);
+
+    const fetchUser = async () => {
+        if (isLoggedIn()) {
+          const userDetails = await getUser();
+          setUser(userDetails);
+        } else {
+          setUser(null);
+        }
+        setLoading(false);
+      };
+    
+      useEffect(() => {
+        fetchUser();
+      }, []);
 
     useEffect(() => {
         const fetchBlog = async () => {
@@ -36,7 +52,7 @@ const BlogDetail = () => {
 
     return (
         <section className="detail-page-blog">
-            <Navbar />
+            <Navbar user={user} />
             <div className="detail-blog-main">
                 <Link to="/blogs" className="back-btn">
                     &larr; Back to Blogs

@@ -1,0 +1,49 @@
+#notauthorized{
+    height: 100vh;
+}
+
+.na-text-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.na-title {
+    font-size: 5em;
+    font-weight: 700;
+    color: #11202f;
+}
+
+.na-subtitle {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1FA9D6;
+}
+
+.na-isi {
+    font-size: 18px;
+    text-align: center;
+    margin: 30px;
+    padding: 20px;
+    color: white;
+}
+
+.na-buttons {
+    margin: 30px;
+    font-weight: 700;
+    border: 2px solid #11202f;
+    text-decoration: none;
+    padding: 15px;
+    text-transform: uppercase;
+    color: #11202f;
+    border-radius: 26px;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.na-buttons:hover {
+    color: white;
+    transition: all 0.2s ease-in-out;
+}

@@ -88,7 +88,7 @@ const Login = () => {
           <div className="col col-xl-10">
             <div className="login-card" style={{ borderRadius: "1rem" }}>
               <div className="row g-0">
-                <div className="col-md-6 col-lg-5 d-none d-md-block">
+                <div className="col-md-6 col-lg-5 d-none d-md-block login-image">
                   <img
                     src={Image}
                     alt="login form"
@@ -99,9 +99,9 @@ const Login = () => {
                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
                   <div className="card-body p-4 p-lg-5 text-black">
                     <form onSubmit={handleSubmit}>
-                      <div className="d-flex align-items-center mb-3 pb-1">
+                      <div className="d-flex align-items-center">
                       </div>
-                      <h5 className="fw-normal mb-3 pb-3" style={{ letterSpacing: "1px" }}>
+                      <h5 className="fw-normal login-hdn mb-3" style={{ letterSpacing: "1px" }}>
                         Sign into your account
                       </h5>
                       <div className="form-outline mb-4">
@@ -136,15 +136,15 @@ const Login = () => {
                         </label>
                       </div>
                       {error && <p style={{ color: "red" }}>{error}</p>}
-                      <div className="pt-1 mb-4">
+                      <div className="pt-1 mb-4 login-buttons">
                         <button
-                          className="btn btn-dark btn-lg btn-block"
+                          className="btn btn-dark btn-lg btn-block login-button"
                           type="submit"
                           disabled={loading}
                         >
                           {loading ? "Logging in..." : "Login"}
                         </button>
-                        <a className="btn btn-dark btn-lg btn-block cancel-btn" href="/">
+                        <a className="btn btn-dark btn-lg btn-block login-button" href="/">
                           Cancel
                         </a>
                       </div>
@@ -160,7 +160,7 @@ const Login = () => {
                       <a href="#!" className="small text-muted">
                         Terms of use.
                       </a>
-                      <a href="#!" className="small text-muted">
+                      <a href="#!" className="small text-muted mx-1">
                         Privacy policy
                       </a>
                     </form>

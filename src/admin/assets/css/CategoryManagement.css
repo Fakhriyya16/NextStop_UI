@@ -1,0 +1,49 @@
+.c-c-container {
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.c-c-heading {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.c-c-table {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.c-c-table thead {
+    background-color: #f8f9fa;
+}
+
+.c-c-table th,
+.c-c-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.c-c-table th {
+    font-weight: bold;
+}
+
+.c-c-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.c-c-button {
+    font-size: 0.875rem;
+}
+
+.c-c-loading {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+}
+

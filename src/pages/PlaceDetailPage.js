@@ -8,11 +8,13 @@ import Navbar from '../components/NavBar.js';
 import Footer from '../components/Footer.js';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Swal from 'sweetalert2';
+import {jwtDecode} from 'jwt-decode';
 
 const PlaceDetailPage = () => {
   const [place, setPlace] = useState(null);
   const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [reviewText, setReviewText] = useState('');
   const [reviewRating, setReviewRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
@@ -43,6 +45,16 @@ const PlaceDetailPage = () => {
         const userDetails = await getUser();
         setUser(userDetails);
         checkFavoriteStatus(userDetails.appUserId, id);
+
+        const token = localStorage.getItem('token');
+        if (token) {
+          try {
+            const decodedToken = jwtDecode(token);
+            setIsAdmin(decodedToken.role.includes('Admin'));
+          } catch (error) {
+            console.error('Error decoding token', error);
+          }
+        }
       }
     };
 
@@ -360,7 +372,7 @@ const PlaceDetailPage = () => {
                 <div key={index} className="review-item">
                   <h5 className="username-review">{review.user}</h5>
                   <p className="comment-review">{review.comment}</p>
-                  {isLoggedIn() && user?.appUserId === review.appUserId && (
+                  {isLoggedIn() && (user?.appUserId === review.appUserId || isAdmin) && (
                     <button
                       className="btn btn-danger"
                       onClick={() => handleReviewDelete(review.id)}
@@ -380,7 +392,7 @@ const PlaceDetailPage = () => {
                       <label
                         key={star}
                         onMouseEnter={() => handleStarHover(star)}
-                        onMouseLeave={() => {handleStarLeave()}}
+                        onMouseLeave={() => handleStarLeave()}
                         onClick={() => handleReviewRating(star)}
                       >
                         <i

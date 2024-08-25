@@ -1,0 +1,82 @@
+.itinerary-page {
+    padding: 20px 80px;
+}
+
+.ip-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #112f11;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.itinerary-day {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+}
+
+.id-h3{
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.id-categories-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.id-category-column {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.id-category-column h4 {
+    margin-bottom: 10px;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.id-category-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.id-category-column li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.id-error-message {
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.ip-back{
+    text-decoration: none;
+    font-size: 16px;
+    color: #112f11;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.ip-back:hover{
+    color: #007bff;
+}

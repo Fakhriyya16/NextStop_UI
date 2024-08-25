@@ -4,10 +4,11 @@ import '../assets/styles/Blogs.css';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-
+import { isLoggedIn, getUser } from '../utils/auth';
 
 const BlogPage = () => {
     const [blogs, setBlogs] = useState([]);
+    const [user, setUser] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [pageSize] = useState(3);
     const [loading, setLoading] = useState(true);
@@ -18,6 +19,20 @@ const BlogPage = () => {
     useEffect(() => {
         fetchBlogs(currentPage, pageSize);
     }, [currentPage]);
+
+    const fetchUser = async () => {
+        if (isLoggedIn()) {
+          const userDetails = await getUser();
+          setUser(userDetails);
+        } else {
+          setUser(null);
+        }
+        setLoading(false);
+      };
+    
+      useEffect(() => {
+        fetchUser();
+      }, []);
 
     const fetchBlogs = async (currentPage, pageSize) => {
         setLoading(true);
@@ -58,7 +73,7 @@ const BlogPage = () => {
 
     return (
         <section id='blogs'>
-            <Navbar />
+            <Navbar user={user}/>
             <h1 className='blogs-heading'>Explore Travel Blogs</h1>
             <div className="go-back-b">
                 <a className="go-back-b-a" href="/">

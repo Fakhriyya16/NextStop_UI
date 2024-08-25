@@ -1,0 +1,83 @@
+.city-admin-container {
+    padding-top: 40px;
+    min-height: 100vh !important;
+  }
+  
+  .city-admin-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .city-admin-form {
+    margin-bottom: 20px;
+  }
+  
+  .city-admin-form .form-group {
+    margin-right: 10px;
+  }
+  
+  .city-admin-form .form-control {
+    width: 300px;
+    margin-right: 10px;
+  }
+  
+  .city-admin-table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .city-admin-table thead {
+    background-color: #f8f9fa;
+  }
+  
+  .city-admin-table th {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .city-admin-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .city-admin-table td {
+    padding: 10px;
+  }
+
+  .form-group{
+    display: flex;
+    align-items: center;
+  }
+  
+  .city-admin-loading {
+    text-align: center;
+    font-style: italic;
+  }
+  
+  .city-admin-actions {
+    text-align: center;
+  }
+  
+  .city-admin-button {
+    margin: 0 5px;
+  }
+  
+  .city-admin-button:first-of-type {
+    margin-right: 10px;
+  }
+  
+  .city-admin-button:hover {
+    opacity: 0.9;
+  }
+  
+  .city-admin-button:focus {
+    outline: none;
+  }
+  
+  .swal2-title {
+    font-size: 1.5rem;
+  }
+  
+  .swal2-confirm {
+    font-size: 1rem;
+  }
+  

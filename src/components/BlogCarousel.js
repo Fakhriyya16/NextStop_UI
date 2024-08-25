@@ -51,17 +51,17 @@ const BlogCarousel = () => {
 
     return (
         <div>
-            <div className='carousel-heading'>
+            <div className='mp-blog-carousel-heading'>
                 <h1>Recent Blogs</h1>
             </div>
-            <div className="center">
-                <div className="wrapper">
+            <div className="mp-blog-center">
+                <div className="mp-blog-wrapper">
                     <Slider {...settings}>
                         {blogs.map((blog) => (
                             <Link to={`/blog/${blog.id}`}>
-                                <div key={blog.id} className="card-crs">
+                                <div key={blog.id} className="mp-blog-card-crs">
                                     <img src={blog.images[0]} alt={blog.title} />
-                                    <div className="content-b">
+                                    <div className="mp-blog-content-b">
                                         <h1>{blog.title}</h1>
                                     </div>
                                 </div>

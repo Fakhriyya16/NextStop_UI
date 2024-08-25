@@ -7,7 +7,7 @@ const PremiumPromotion = () => {
       <div className="premium-content">
         <h2>Plan Your Dream Itinerary</h2>
         <p>Unlock exclusive features with our Premium Plan. Create personalized itineraries tailored to your preferences and enjoy a seamless travel experience.</p>
-        <button className="button-premium">Upgrade to Premium</button>
+        <a href='/buypremium' className="mp-button-premium">Upgrade to Premium</a>
       </div>
     </div>
   );

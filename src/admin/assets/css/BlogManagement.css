@@ -1,0 +1,77 @@
+.b-b-container {
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.b-b-heading {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.b-b-table {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.b-b-table thead {
+    background-color: #f8f9fa;
+}
+
+.b-b-table th,
+.b-b-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.b-b-table th {
+    font-weight: bold;
+}
+
+.b-b-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.b-b-button {
+    font-size: 0.875rem;
+}
+
+.b-b-loading {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.b-b-pagination {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.b-b-pagination-item {
+    margin: 0 0.1rem;
+}
+
+.b-b-pagination .page-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.b-b-pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.b-b-pagination .page-item.disabled .page-link {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    color: #6c757d;
+}

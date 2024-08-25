@@ -4,6 +4,7 @@ import "../assets/styles/Register.css";
 import Image from "../assets/img/empty-frame-with-plane-globe.jpg";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -13,38 +14,53 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // Separate state for confirm password visibility
+  const [showPassword, setShowPassword] = useState(false); 
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setLoading(true);
-
+  
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       setLoading(false);
       return;
     }
-
+  
     try {
       const response = await axios.post("https://localhost:7264/api/Account/Register", {
         name,
         surname,
         email,
         password,
-        confirmPassword, // Include confirmPassword in the request payload
+        confirmPassword,
       });
-
+  
       if (response.status === 200) {
-        navigate("/login");
+        Swal.fire({
+          title: 'Registration Successful!',
+          text: 'Please check your email for a confirmation link.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
       } else {
-        setError(response.data.errors[0] || "An unexpected error occurred.");
+        const errors = response.data.errors;
+        if (Array.isArray(errors) && errors.length > 0) {
+          setError(errors[0]); 
+        } else {
+          setError("An unexpected error occurred.");
+        }
       }
     } catch (error) {
       if (error.response) {
-        setError(error.response.data.errors[0] || "An unexpected error occurred.");
+        const errors = error.response.data.errors;
+        if (Array.isArray(errors) && errors.length > 0) {
+          setError(errors[0]); 
+        } else {
+          setError("An unexpected error occurred.");
+        }
       } else {
         setError("An unexpected error occurred. Please try again later.");
       }
@@ -55,12 +71,12 @@ const Register = () => {
 
   return (
     <section className="vh-100" style={{ backgroundColor: "#fff" }}>
-      <div className="container py-4 h-100">
-        <div className="row d-flex justify-content-center align-items-center h-100">
+      <div className="container py-7">
+        <div className="row d-flex justify-content-center align-items-center">
           <div className="col col-xl-10">
             <div className="register-card" style={{ borderRadius: "1rem" }}>
               <div className="row g-0">
-                <div className="col-md-6 col-lg-5 d-none d-md-block">
+                <div className="col-md-6 col-lg-5 d-none d-md-block register-image">
                   <img
                     src={Image}
                     alt="register form"
@@ -116,7 +132,7 @@ const Register = () => {
                       <div className="form-outline mb-2">
                         <div className="input-group">
                           <input
-                            type={showPassword ? "text" : "password"} // Toggle between text and password
+                            type={showPassword ? "text" : "password"} 
                             id="formPassword"
                             className="form-control form-control-lg"
                             value={password}
@@ -125,7 +141,7 @@ const Register = () => {
                           />
                           <span 
                             className="input-group-text" 
-                            onClick={() => setShowPassword(!showPassword)} // Toggle showPassword state
+                            onClick={() => setShowPassword(!showPassword)} 
                             style={{ cursor: "pointer" }}
                           >
                             {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -138,7 +154,7 @@ const Register = () => {
                       <div className="form-outline mb-2">
                         <div className="input-group">
                           <input
-                            type={showConfirmPassword ? "text" : "password"} // Toggle between text and password
+                            type={showConfirmPassword ? "text" : "password"} 
                             id="formConfirmPassword"
                             className="form-control form-control-lg"
                             value={confirmPassword}
@@ -147,7 +163,7 @@ const Register = () => {
                           />
                           <span 
                             className="input-group-text" 
-                            onClick={() => setShowConfirmPassword(!showConfirmPassword)} // Toggle showConfirmPassword state
+                            onClick={() => setShowConfirmPassword(!showConfirmPassword)} 
                             style={{ cursor: "pointer" }}
                           >
                             {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
@@ -158,16 +174,16 @@ const Register = () => {
                         </label>
                       </div>
                       {error && <p style={{ color: "red" }}>{error}</p>}
-                      <div className="mb-2">
+                      <div className="mb-2 register-buttons">
                         <button
-                          className="btn btn-dark btn-lg btn-block"
+                          className="btn btn-dark btn-block register-button"
                           type="submit"
                           disabled={loading}
                         >
                           {loading ? "Registering..." : "Register"}
                         </button>
                         <button
-                          className="btn btn-dark btn-lg btn-block cancel-btn"
+                          className="btn btn-dark btn-block cancel-btn register-button"
                           type="button"
                           onClick={() => navigate("/")}
                         >

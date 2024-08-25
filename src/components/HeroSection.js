@@ -12,6 +12,7 @@ const HeroSection = () => {
             Start your adventure today with personalized itineraries crafted just for you.
           </p>
           <a href="#about-us" className="cta">Read More</a>
+          <a href="/generateitinerary" className="cta mx-3">Generate Itinerary</a>
         </div>
         <div className="mainHeading__image">
           <img src={BackgroundImage} alt="Travel" />

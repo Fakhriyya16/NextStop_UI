@@ -1,0 +1,23 @@
+.t-m-container {
+    padding-top: 50px;
+  }
+  
+  .t-m-heading {
+    margin-bottom: 1rem;
+  }
+  
+  .t-m-table {
+    margin-top: 1rem;
+  }
+  
+  .t-m-form {
+    margin-bottom: 1rem;
+  }
+  
+  .t-m-table th, .t-m-table td {
+    text-align: center;
+  }
+ 
+  .tm-edit{
+    width: 20% !important;
+  }
