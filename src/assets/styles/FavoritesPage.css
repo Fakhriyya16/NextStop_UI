@@ -1,19 +1,19 @@
-.favorites-cnt{
+.favorites-cnt {
     padding: 0px 80px;
     min-height: 55vh;
 }
 
-.favorite-h{
+.favorite-h {
     color: #112f11;
     font-size: 32px;
     font-weight: 700;
 }
 
-.favorite-empty{
+.favorite-empty {
     color: #112e2f;
 }
 
-.favorite-empty-suggestion{
+.favorite-empty-suggestion {
     font-size: 14px;
     margin-top: 15px;
     color: #112e2f;
@@ -26,6 +26,7 @@
     overflow: hidden;
     transition: transform 0.3s ease;
     cursor: pointer;
+    width: 250px;
 }
 
 .favorite-card:hover {
@@ -42,7 +43,7 @@
 .favorite-card .card-body {
     padding: 15px;
     text-align: center;
-    align-self:flex-end;
+    align-self: center;
 }
 
 .favorite-card .card-title {
@@ -69,4 +70,76 @@
 
 .favorite-card .btn-danger {
     margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .favorites-cnt {
+        padding: 0px 20px;
+    }
+
+    .favorite-h {
+        font-size: 28px;
+    }
+
+    .favorite-empty {
+        font-size: 16px;
+    }
+
+    .favorite-empty-suggestion {
+        font-size: 12px;
+    }
+
+    .favorite-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .favorite-card .card-title {
+        font-size: 1rem;
+    }
+
+    .favorite-card .card-text {
+        font-size: 0.9rem;
+    }
+
+    .pagination-controls button {
+        min-width: 80px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .favorites-cnt {
+        padding: 0px 10px;
+    }
+
+    .favorite-h {
+        font-size: 24px;
+    }
+
+    .favorite-empty {
+        font-size: 14px;
+    }
+
+    .favorite-empty-suggestion {
+        font-size: 10px;
+    }
+
+    .favorite-card {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .favorite-card .card-title {
+        font-size: 0.9rem;
+    }
+
+    .favorite-card .card-text {
+        font-size: 0.8rem;
+    }
+
+    .pagination-controls button {
+        min-width: 60px;
+        font-size: 12px;
+    }
 }

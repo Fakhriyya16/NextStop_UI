@@ -1,91 +1,156 @@
-    .mainHeading__content {
-    max-width: 100%;
-    display: flex;
-    justify-content: space-between;
+.mainHeading__content {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 94vh;
+  padding: 0 50px;
+  overflow: hidden;
+}
+
+.mainHeading__text {
+  color: #637498;
+  max-width: 620px;
+  z-index: 2;
+}
+
+.mainHeading__preTitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  color: #637498;
+}
+
+.mainHeading__title {
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  font-size: 40px;
+  color: #637498;
+}
+
+.mainHeading__description {
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  line-height: 26px;
+  padding-bottom: 20px;
+  color: #637498;
+}
+
+.cta {
+  padding: 16px 32px;
+  color: #637498;
+  background-color: transparent;
+  border: 1px solid rgba(99, 116, 152, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.cta:hover {
+  box-shadow: inset 0px -80px 0px rgba(99, 116, 152, 0.1);
+  transform: translateY(-5px);
+}
+
+.mainHeading__image {
+  width: 50%;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 600px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.mainHeading__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-out;
+}
+
+.mainHeading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .mainHeading__content {
+    flex-direction: column;
     align-items: center;
-    position: relative; 
-    width: 100%;
-    height: 94vh;
-    padding: 0 50px;
-    overflow: hidden; 
+    padding: 20px;
+    height: auto;
   }
-  
-  .mainHeading__text {
-    color: #637498;
-    max-width: 620px;
-    z-index: 2;
-  }
-  
-  .mainHeading__preTitle {
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
-    color: #637498;
-  }
-  
-  .mainHeading__title {
-    text-transform: uppercase;
-    font-weight: 200;
-    letter-spacing: 2px;
-    margin-bottom: 24px;
-    font-size: 40px;
-    color: #637498;
-  }
-  
-  .mainHeading__description {
-    letter-spacing: 0.5px;
-    font-size: 16px;
-    line-height: 26px;
-    padding-bottom: 20px;
-    color: #637498;
-  }
-  
-  .cta {
-    padding: 16px 32px;
-    color: #637498;
-    background-color: transparent;
-    border: 1px solid rgba(99, 116, 152, 0.4);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.4s ease;
-  }
-  
-  .cta:hover {
-    box-shadow: inset 0px -80px 0px rgba(99, 116, 152, 0.1);
-    transform: translateY(-5px);
-  }
-  
+
   .mainHeading__image {
-    width: 50%;
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    height: 600px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
-  
-  .mainHeading__image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute; 
-    top: 0;
-    left: 0;
-    transition: opacity 1s ease-out; 
+    height: auto;
+    margin-top: 20px;
   }
-  
-  .mainHeading::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: 1;
-    pointer-events: none;
+
+  .mainHeading__text {
+    text-align: center;
+    max-width: 100%;
   }
-  
+
+  .mainHeading__title {
+    font-size: 32px;
+  }
+
+  .mainHeading__description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .cta {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainHeading__title {
+    font-size: 28px;
+  }
+
+  .mainHeading__description {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .cta {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainHeading__title {
+    font-size: 24px;
+  }
+
+  .mainHeading__description {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .cta {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+}

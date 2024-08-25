@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { logout, getUser } from '../utils/auth';
+import { logout, getUser, isLoggedIn } from '../utils/auth';
 import Logo from '../assets/img/nextstop-high-resolution-logo-black-transparent.png';
 import {jwtDecode} from 'jwt-decode';
 import '../assets/styles/Navbar.css';
-import { isLoggedIn } from '../utils/auth';
 
 function Navbar() {
   const [countries, setCountries] = useState([]);
   const [user, setUser] = useState(null); 
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isSidebarActive, setIsSidebarActive] = useState(false);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -41,15 +41,22 @@ function Navbar() {
     fetchUser();
   }, []);
 
+  const toggleSidebar = () => {
+    setIsSidebarActive(!isSidebarActive);
+  };
+
   return (
     <nav className="mp-navbar">
       <div className="mp-navbar-logo">
         <Link to="/" >
           <img src={Logo} alt="Logo" className="mp-logo" />
         </Link>
+        <div className="mp-navbar-toggle" onClick={toggleSidebar}>
+          <i className="fas fa-bars"></i>
+        </div>
       </div>
 
-      <div className="mp-navbar-right">
+      <div className={`mp-navbar-right ${isSidebarActive ? 'active' : ''}`}>
         <div className="mp-navbar-destinations">
           <div className="mp-dropdown-container">
             <button className="mp-dropdown-toggle">Available Destinations</button>

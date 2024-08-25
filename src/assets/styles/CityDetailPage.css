@@ -1,11 +1,6 @@
-/* src/assets/styles/CityDetail.css */
-.place-detail-page {
-    padding: 10px 100px;
-    position: relative;
-}
-
 .place-detail-main {
-    padding: 10px 100px;
+    padding: 10px 5%;
+    position: relative;
 }
 
 .place-detail-back-btn {
@@ -81,4 +76,52 @@
     margin-left: 20px;
     font-size: 14px;
     color: #333;
+}
+
+@media (max-width: 768px) {
+    .place-detail-page {
+        padding: 10px 0px !important;
+        min-height: 100vh;
+    }
+
+    .place-detail-back-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .place-detail-heading {
+        font-size: 24px;
+    }
+
+    .place-detail-description {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .place-detail-page {
+        padding: 10px 0px;
+        min-height: 100vh;
+    }
+
+    .place-detail-back-btn {
+        font-size: 12px;
+        padding: 4px 0px;
+    }
+
+    .place-detail-heading {
+        font-size: 20px;
+    }
+
+    .place-detail-description {
+        font-size: 12px;
+    }
+
+    .place-detail-card {
+        padding: 10px;
+    }
+
+    .place-detail-image-wrapper {
+        max-height: 40vh;
+    }
 }

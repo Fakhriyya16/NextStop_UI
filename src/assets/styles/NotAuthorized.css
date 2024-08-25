@@ -1,4 +1,4 @@
-#notauthorized{
+#notauthorized {
     height: 100vh;
 }
 
@@ -46,4 +46,36 @@
 .na-buttons:hover {
     color: white;
     transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .na-title {
+        font-size: 3em;
+    }
+
+    .na-subtitle {
+        font-size: 28px;
+        padding: 0px 50px;
+    }
+
+    .na-buttons {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .na-title {
+        font-size: 2em;
+    }
+
+    .na-subtitle {
+        font-size: 20px;
+        padding: 0px 50px;
+    }
+
+    .na-buttons {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
 }

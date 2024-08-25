@@ -1,6 +1,7 @@
-.detail-blog-main{
+.detail-blog-main {
     padding: 10px 100px;
 }
+
 .blog-card-detail {
     position: relative;
     padding: 15px;
@@ -94,4 +95,54 @@
 .b-btn:hover {
     background-color: #363738;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .detail-blog-main {
+        padding: 10px;
+    }
+
+    .blog-card-detail {
+        padding: 10px;
+    }
+
+    .blog-detail-heading {
+        font-size: 24px;
+    }
+
+    .blog-detail-content {
+        font-size: 16px;
+    }
+
+    .back-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-blog-main {
+        padding: 10px;
+    }
+
+    .blog-card-detail {
+        padding: 5px;
+    }
+
+    .blog-detail-heading {
+        font-size: 20px;
+    }
+
+    .blog-detail-content {
+        font-size: 14px;
+    }
+
+    .back-btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .blog-detail-image {
+        max-height: 40vh;
+    }
 }

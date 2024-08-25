@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Explore = () => {
   const [places, setPlaces] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(4);
+  const [pageSize, setPageSize] = useState(5);
   const [hasNext, setHasNext] = useState(false);
   const [hasPrevious, setHasPrevious] = useState(false);
   const [totalPages, setTotalPages] = useState(0);
@@ -82,9 +82,9 @@ const Explore = () => {
       <div className="mp-ex-pagination-controls">
         <label htmlFor="pageSize">Items per page:</label>
         <select id="pageSize" value={pageSize} onChange={handlePageSizeChange} className='mp-form-select'>
-          <option value="4">4</option>
-          <option value="8">8</option>
-          <option value="12">12</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
         </select>
       </div>
 
@@ -103,7 +103,7 @@ const Explore = () => {
                 <div className="mp-card__content--container">
                   <h2 className="mp-card__title">{place.name}</h2>
                   <p className="mp-card__description">
-                    {shortenDescription(place.description, 7)}
+                    {shortenDescription(place.description, 4)}
                   </p>
                 </div>
                 <Link to={`/place/${place.id}`}>

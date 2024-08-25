@@ -21,6 +21,7 @@ import NotAuthorized from './pages/NotAuthorized';
 import ProfilePage from './pages/ProfilePage';
 import SearchPlace from './pages/SearchPlaces';
 import CityDetail from './pages/CityDetailPage';
+import WriteBlogPage from './pages/WriteBlogPage';
 
 Modal.setAppElement('#root');
 
@@ -73,6 +74,7 @@ function App() {
           <Route path ='/profile/:id' element={<ProfilePage/>} />
           <Route path ='/searchplaces' element={<SearchPlace/>} />
           <Route path ='/city/:name' element={<CityDetail/>} />
+          <Route path ='/createblog' element={<WriteBlogPage/>} />
         </Routes>
     </div>
   );

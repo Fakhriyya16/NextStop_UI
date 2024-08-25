@@ -1,0 +1,82 @@
+.write-blog-page-content{
+    padding: 50px 100px;
+}
+
+.write-blog-heading {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.write-blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.write-blog-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.write-blog-form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.write-blog-form-group input[type="text"],
+.write-blog-form-group textarea,
+.write-blog-form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.write-blog-form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.write-blog-button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.write-blog-button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    font-size: 1em;
+}
+
+.success {
+    color: green;
+    text-align: center;
+    font-size: 1em;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 10px;
+    }
+    
+    .write-blog-form-group input[type="text"],
+    .write-blog-form-group textarea {
+        font-size: 0.9em;
+    }
+
+    .write-blog-button[type="submit"] {
+        font-size: 0.9em;
+    }
+}

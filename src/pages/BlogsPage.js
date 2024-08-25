@@ -22,17 +22,17 @@ const BlogPage = () => {
 
     const fetchUser = async () => {
         if (isLoggedIn()) {
-          const userDetails = await getUser();
-          setUser(userDetails);
+            const userDetails = await getUser();
+            setUser(userDetails);
         } else {
-          setUser(null);
+            setUser(null);
         }
         setLoading(false);
-      };
-    
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         fetchUser();
-      }, []);
+    }, []);
 
     const fetchBlogs = async (currentPage, pageSize) => {
         setLoading(true);
@@ -41,6 +41,7 @@ const BlogPage = () => {
                 params: { currentPage, pageSize }
             });
             const data = response.data;
+            console.log(response.data);
             setBlogs(data.data || []);
             setHasNext(data.hasNext);
             setHasPrevious(data.hasPrevious);
@@ -73,7 +74,7 @@ const BlogPage = () => {
 
     return (
         <section id='blogs'>
-            <Navbar user={user}/>
+            <Navbar user={user} />
             <h1 className='blogs-heading'>Explore Travel Blogs</h1>
             <div className="go-back-b">
                 <a className="go-back-b-a" href="/">
@@ -83,6 +84,13 @@ const BlogPage = () => {
                     Go Back
                 </a>
             </div>
+            {isLoggedIn() && (
+                <div className="write-blog-button">
+                    <Link to="/createblog" className="b-btn b-btn--with-icon">
+                        <i className="b-btn-icon fa fa-pencil"></i> Write Blog
+                    </Link>
+                </div>
+            )}
             <div className="blog-container">
                 {loading ? (
                     <p>Loading blogs...</p>

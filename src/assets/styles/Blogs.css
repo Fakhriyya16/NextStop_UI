@@ -42,6 +42,32 @@
     color: #0d1f4e;
 }
 
+.write-blog-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.write-blog-button .b-btn {
+    background-color: #007bff; 
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.write-blog-button .b-btn:hover {
+    background-color: #0056b3; 
+}
+
+.write-blog-button .b-btn-icon {
+    margin-right: 8px;
+}
+
 .post_content h1 {
     font-size: 24px;
     font-weight: bold;
@@ -139,4 +165,10 @@
 
 .b-pagination button:hover:not(:disabled) {
     color: white;
+}
+
+@media (max-width: 768px) {
+    .go-back-b {
+        padding-left: 40px; 
+    }
 }

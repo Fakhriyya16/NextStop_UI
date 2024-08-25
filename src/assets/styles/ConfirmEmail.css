@@ -49,3 +49,49 @@
     display: inline-block;
     margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+    .ce-heading {
+        font-size: 32px;
+    }
+
+    .ce-message {
+        font-size: 18px;
+    }
+
+    .ce-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .ce-checkmark {
+        font-size: 80px;
+    }
+
+    .ce-card {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 480px) { 
+    .ce-heading {
+        font-size: 28px;
+    }
+
+    .ce-message {
+        font-size: 16px;
+    }
+
+    .ce-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .ce-checkmark {
+        font-size: 60px;
+    }
+
+    .ce-card {
+        padding: 20px;
+    }
+}

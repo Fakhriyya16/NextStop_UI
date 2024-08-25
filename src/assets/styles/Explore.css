@@ -103,6 +103,7 @@ p {
   justify-content: space-between;
   align-self: flex-end;
   height: 55%;
+  width: 250px;
   padding: 12% 1.25rem 1.875rem;
   background: linear-gradient(180deg,
       hsla(0, 0%, 0%, 0) 0%,
